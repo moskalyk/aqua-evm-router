@@ -1,4 +1,4 @@
-# aqua-evm-orchestrator
+# aqua-evm-router
 deterministic peer index addressing based on a hash of evm address
 
 ## usage

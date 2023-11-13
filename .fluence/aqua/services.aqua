@@ -1,0 +1,2 @@
+service Router("router"):
+  deterministic_index(address: string, n: i32) -> i32

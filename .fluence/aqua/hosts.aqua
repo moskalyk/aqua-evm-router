@@ -1,0 +1,43 @@
+aqua Hosts declares *
+
+data SpellLocation:
+    hostId: string
+    spellId: string
+    workerId: string
+
+data Host:
+    definition: string
+    installationSpells: []SpellLocation
+    timestamp: string
+    relayId: string
+    dummyDealId: string
+
+data Hosts:
+    defaultWorker: ?Host
+
+func get() -> Hosts:
+    <- Hosts(
+        defaultWorker=?[Host(
+            definition="bafkreihwzsywhy7sqsjpfm4d3vr3xluklnsjaieedwxy2nildpuytaig7i",
+            installationSpells=[
+                SpellLocation(
+                    hostId="12D3KooWFbasz6SnGxhPq3KWn8KgNW4asNKskxR5JizMdszM4KCN",
+                    spellId="13afc63b-cb01-4290-ae33-8b869aac34dc",
+                    workerId="12D3KooWAVcskQLjKcCzq8psZ2dC6keBtA5wjLSUko6sbfwi4Zu1"
+                ),
+                SpellLocation(
+                    hostId="12D3KooWBCAWAGNMfqaBG1kUv49dkK8wSNeiTfGubLLjGQaFBf6z",
+                    spellId="1f796f32-c1c7-4869-aac7-4e0b083c6b23",
+                    workerId="12D3KooWBVhobcykcdrgZr224Bd3BYWhsUcVMX2ba8YN2VFsCt4N"
+                ),
+                SpellLocation(
+                    hostId="12D3KooWEqbHHE1bzk1nJ8LE2Wbm2UaycYjRsSB4CTxDS342Boip",
+                    spellId="9e9ae1e9-2700-4b67-842d-6540b91e43c5",
+                    workerId="12D3KooWH1hJiiN6sAfBuNPqZeXo2wixUyABWS7Yx5DShQChWRuv"
+                )
+            ],
+            timestamp="2023-11-13T12:32:33.441Z",
+            relayId="12D3KooWFbasz6SnGxhPq3KWn8KgNW4asNKskxR5JizMdszM4KCN",
+            dummyDealId="defaultWorker_12D3KooWNe8E9vzJvYPn6k8TUAiGxCQDX57oEgPJs9fVnQq6NCv2_043009090777704984"
+        )]
+    )

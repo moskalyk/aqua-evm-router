@@ -1,0 +1,24 @@
+aqua Main
+
+import "@fluencelabs/aqua-lib/builtin.aqua"
+import "@fluencelabs/aqua-lib/subnet.aqua"
+
+use "deals.aqua"
+use "hosts.aqua"
+import "services.aqua"
+
+export getIndex
+
+import SpellLocation from "hosts.aqua"
+
+func getWorkerInfo() -> []SpellLocation:
+    hosts <- Hosts.get()  
+    <- hosts.defaultWorker!.installationSpells
+
+func getIndex(wallet_address: string, peer_num: i32) -> []i32:
+    workers <- getWorkerInfo()
+    result:  *i32
+    for w <- workers:
+        on w.workerId via w.hostId:
+            result <- Router.deterministic_index(wallet_address, peer_num)
+    <- result

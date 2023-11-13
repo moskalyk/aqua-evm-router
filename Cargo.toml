@@ -1,0 +1,2 @@
+[workspace]
+members = [ "src/services/router/modules/router" ]
